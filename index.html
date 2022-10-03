@@ -4,11 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <title>Document</title>
   </head>
   <body>
+    <style>
+      .hidden {
+        display: none;
+      }
+      #spinner {
+        display: inline-block;
+        transform: translateZ(1px);
+      }
+      #spinner > div {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        background: rgb(247, 121, 121);
+        animation: loader-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      @keyframes loader-circle {
+        0%,
+        100% {
+          animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+        }
+        0% {
+          transform: rotateY(0deg);
+        }
+        50% {
+          transform: rotateY(1800deg);
+          animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+        }
+        100% {
+          transform: rotateY(3600deg);
+        }
+      }
+    </style>
+    <div id="spinner"><div></div></div>
     <div class="list-container"></div>
-    <script src="js/answer1.js"></script>
-    <script src="js/answer2.js"></script>
+    <script defer src="js/answer1.js"></script>
+    <script defer src="js/answer2.js"></script>
   </body>
 </html>
