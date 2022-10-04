@@ -4,27 +4,19 @@ const listContainer = document.querySelector(".list-container");
 let spinner = document.querySelector("#spinner");
 let html = "";
 
-// window.addEventListener ('load', () => {
-
-// });
-
-const htmlData = (data) => {
+const htmlData = (gameData) => {
   function timeOutTest() {
     setTimeout(function () {
-      for (i = 0; i < data.length; i++) {
-        // console.log(data[i]);
-        // console.log(data[i].name);
-        // console.log(data[i].tags.length);
-
+      for (i = 0; i < gameData.length; i++) {
         if (i === 8) {
           spinner.style.display = "none"; //Removing the spinner before the html is created!
           break;
         }
 
         html += `<div>
-            <h3>${data[i].name}</h3>     
-            <p>Rating: ${data[i].rating}</p>
-            <p>Number of tags: ${data[i].tags.length}</p>          
+            <h3>${gameData[i].name}</h3>     
+            <p>Rating: ${gameData[i].rating}</p>
+            <p>Number of tags: ${gameData[i].tags.length}</p>          
             </div>`;
       }
       listContainer.innerHTML = html;
@@ -40,10 +32,8 @@ async function getApi() {
     const response = await getUrl.json();
 
     htmlData(response.results);
-
-    const data = response;
   } catch (error) {
-    console.log(error);
+    console.log(error, (listContainer.innerHTML = error));
   }
 }
 
