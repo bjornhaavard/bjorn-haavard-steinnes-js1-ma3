@@ -1,15 +1,16 @@
 .list-container {
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  background-color: darkblue;
+  background-color: rgb(10, 10, 39);
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .list-container > * {
   border: 3px solid white;
-  gap: 1rem;
   margin: 1rem;
+  padding: 1rem;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
 }
 
 .hidden {
