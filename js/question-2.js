@@ -1,4 +1,4 @@
-const apiKey = "702be7ad514241bbbdece78d256bc2b2"
+const apiKey = "702be7ad514241bbbdece78d256bc2b2";
 const url = `https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating&key=${apiKey}`;
 const listContainer = document.querySelector(".list-container");
 let spinner = document.querySelector("#spinner");
@@ -33,7 +33,7 @@ async function getApi() {
 
     htmlData(response.results);
   } catch (error) {
-    console.log(error, (listContainer.innerHTML = `An error occured while fetching the API: ${error}`));
+    console.log(error, (listContainer.innerHTML = `An error occured while fetching the API: ${error}, `));
   }
 }
 
